@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <linearGradient id="auroraBeam" x1="0%" y1="0%" x2="55%" y2="100%">
+      <stop offset="0%" stop-color="#0e9aa7" stop-opacity="0.95" />
+      <stop offset="18%" stop-color="#2f7be8" stop-opacity="0.9" />
+      <stop offset="42%" stop-color="#1d4ed8" stop-opacity="0.85" />
+      <stop offset="65%" stop-color="#6b4fb8" stop-opacity="0.8" />
+      <stop offset="85%" stop-color="#3b2a8f" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#8c2b3d" stop-opacity="0.7" />
+    </linearGradient>
+
+    <radialGradient id="mintLight" cx="15%" cy="8%" r="35%">
+      <stop offset="0%" stop-color="#d7f3e6" stop-opacity="0.95" />
+      <stop offset="40%" stop-color="#0e9aa7" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="lilacWash" cx="42%" cy="45%" r="45%">
+      <stop offset="0%" stop-color="#cdbbf0" stop-opacity="0.75" />
+      <stop offset="50%" stop-color="#6b4fb8" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="crimsonBase" cx="35%" cy="92%" r="40%">
+      <stop offset="0%" stop-color="#8c2b3d" stop-opacity="0.8" />
+      <stop offset="60%" stop-color="#3b2a8f" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d7f3e6" stop-opacity="0.95" />
+      <stop offset="25%" stop-color="#2f7be8" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#cdbbf0" stop-opacity="0.95" />
+      <stop offset="75%" stop-color="#c9a77a" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#6b4fb8" stop-opacity="0.9" />
+    </linearGradient>
+
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.07 0" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#000000" />
+
+  <!-- Diagonal aurora plume -->
+  <path d="M -200 -100 L 900 -100 L 1300 1180 L -200 1180 Z" fill="url(#auroraBeam)" opacity="0.88" />
+  <rect width="1920" height="1080" fill="url(#mintLight)" />
+  <rect width="1920" height="1080" fill="url(#lilacWash)" />
+  <rect width="1920" height="1080" fill="url(#crimsonBase)" />
+
+  <!-- Deep shadow mask to keep right side pitch black -->
+  <rect x="750" y="0" width="1200" height="1080" fill="#000000" opacity="0.65" />
+  <path d="M 600 0 Q 1100 540 850 1080 L 1920 1080 L 1920 0 Z" fill="#000000" opacity="0.92" />
+
+  <!-- Iridescent floating ring matching Screenshot 2026-10-11 172349.png -->
+  <g transform="translate(380, 480) rotate(-35)">
+    <!-- Outer glow -->
+    <ellipse cx="0" cy="0" rx="260" ry="120" fill="none" stroke="#2f7be8" stroke-width="26" opacity="0.3" filter="blur(16px)" />
+    <!-- Main iridescent ring body -->
+    <ellipse cx="0" cy="0" rx="250" ry="110" fill="none" stroke="url(#ringGrad)" stroke-width="22" opacity="0.92" />
+    <!-- Inner specular highlight -->
+    <ellipse cx="-4" cy="-4" rx="245" ry="105" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.85" />
+    <!-- Glass shadow depth -->
+    <ellipse cx="4" cy="4" rx="235" ry="98" fill="none" stroke="#050b2e" stroke-width="12" opacity="0.7" />
+    <!-- Rim gold/lilac accent -->
+    <path d="M -220 20 A 250 110 0 0 0 220 20" fill="none" stroke="#c9a77a" stroke-width="3.5" opacity="0.75" />
+  </g>
+
+  <!-- Fine texture overlay -->
+  <rect width="1920" height="1080" fill="#ffffff" filter="url(#noiseFilter)" opacity="0.6" mix-blend-mode="overlay" />
+</svg>

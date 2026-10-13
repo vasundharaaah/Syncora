@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Bodoni Moda", Didot, "Bodoni MT", serif;
+  --font-display: "Bodoni Moda", Didot, "Bodoni MT", serif;
+  --font-sans: "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-black: #000000;
+  --color-brand-ink: #07060d;
+  --color-brand-panel: #0d0b17;
+  --color-brand-navy: #050b2e;
+  --color-brand-royal: #1d4ed8;
+  --color-brand-azure: #2f7be8;
+  --color-brand-teal: #0e9aa7;
+  --color-brand-mint: #d7f3e6;
+  --color-brand-lilac: #cdbbf0;
+  --color-brand-violet: #6b4fb8;
+  --color-brand-indigo: #3b2a8f;
+  --color-brand-crimson: #8c2b3d;
+  --color-brand-gold: #c9a77a;
+}
+
+:root {
+  --black: #000000;
+  --ink: #07060d;
+  --panel: #0d0b17;
+  --navy: #050b2e;
+  --royal: #1d4ed8;
+  --azure: #2f7be8;
+  --teal: #0e9aa7;
+  --mint: #d7f3e6;
+  --lilac: #cdbbf0;
+  --violet: #6b4fb8;
+  --indigo: #3b2a8f;
+  --crimson: #8c2b3d;
+  --white: #ffffff;
+  --chrome-gold: #c9a77a;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: #000000;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+/* Luxury typography styling */
+h1, h2, h3, .font-display {
+  font-family: var(--font-serif);
+}
+
+.font-mono, .tabular-nums {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Signature Brand Gradients */
+.gradient-signature {
+  background: linear-gradient(135deg, #0e9aa7 0%, #2f7be8 25%, #1d4ed8 50%, #6b4fb8 75%, #cdbbf0 100%);
+}
+
+.gradient-text-signature {
+  background: linear-gradient(135deg, #d7f3e6 0%, #2f7be8 35%, #cdbbf0 70%, #d7f3e6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-border-signature {
+  border-image: linear-gradient(135deg, #0e9aa7, #2f7be8, #6b4fb8, #cdbbf0) 1;
+}
+
+.gradient-warm {
+  background: linear-gradient(135deg, #8c2b3d 0%, #6b4fb8 100%);
+}
+
+/* Glassmorphism Cards */
+.glass-panel {
+  background: rgba(13, 11, 23, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(205, 187, 240, 0.14);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-panel-interactive {
+  background: rgba(13, 11, 23, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(205, 187, 240, 0.14);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  border-color: rgba(205, 187, 240, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px 0 rgba(107, 79, 184, 0.2);
+}
+
+/* Noise texture overlay */
+.film-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(205, 187, 240, 0.22);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(205, 187, 240, 0.45);
+}
+
+/* Aurora drift background animation */
+@keyframes aurora-drift {
+  0% {
+    transform: scale(1.0) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.08) rotate(1.8deg) translate(-1%, -1%);
+  }
+  100% {
+    transform: scale(1.0) rotate(0deg);
+  }
+}
+
+.animate-aurora-drift {
+  animation: aurora-drift 40s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+.animate-float {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+

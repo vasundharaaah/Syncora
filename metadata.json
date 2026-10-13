@@ -1,0 +1,6 @@
+{
+  "name": "SYNCORA - AI Event Management Platform",
+  "description": "The single live source of truth for modern event management companies. Command center, real-time logistics, department workflows, and AI profit optimization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

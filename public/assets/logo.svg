@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 190" width="940" height="190">
+  <!-- Clean transparent background with Didone serif wordmark -->
+  <g id="wordmark">
+    <text x="10" y="122" font-family="'Bodoni Moda', 'Didot', 'Bodoni MT', serif" font-weight="600" font-size="126" fill="#ffffff" letter-spacing="-1.5">SYNCORA</text>
+    <text x="15" y="162" font-family="'Martian Mono', 'General Sans', monospace, sans-serif" font-weight="500" font-size="16" fill="#cdbbf0" letter-spacing="8" opacity="0.95">AN EVENT MANAGEMENT PLATFORM</text>
+  </g>
+</svg>
